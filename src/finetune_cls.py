@@ -155,7 +155,7 @@ if __name__ == '__main__':
 
     # Bunch of classification tasks
     num_tasks = get_num_task(args.dataset)
-    dataset_folder = '/home/chendingshuo/MoD/datasets/molecule_net/'
+    dataset_folder = '../datasets/molecule_net/'
     dataset = MoleculeDataset(dataset_folder + args.dataset, dataset=args.dataset)
     print(dataset)
     print('=============== Statistics ==============')
