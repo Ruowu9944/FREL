@@ -10,7 +10,7 @@ parser.add_argument('--device', type=int, default=0)
 # Dataset and dataloader
 parser.add_argument('--input_data_dir', type=str, default='../datasets/GEOM/processed/')
 parser.add_argument('--output_model_dir', type=str, default='./model_saved/')
-parser.add_argument('--model_file', type=str, default='regression_T_0.1_contrast_0.pth')
+parser.add_argument('--model_file', type=str, default='pretrained_reg.pth')
 parser.add_argument('--dataset', type=str, default='esol')
 parser.add_argument('--num_workers', type=int, default=8)
 
@@ -35,18 +35,6 @@ parser.add_argument('--JK', type=str, default='last')
 # Modelality
 parser.add_argument('--modality', type=str, default='graph',
                     choices=['smiles', 'graph'])
-
-# GraphGPS Config
-parser.add_argument("--model", type=str, default="gt", choices=["gt", "bigcn"])
-parser.add_argument("--gt_layer_type", type=str, default="GIN+Transformer", help="")
-parser.add_argument("--gt_layers", type=int, default=4, help="num of gt_layers")
-parser.add_argument("--gt_n_heads", type=int, default=8)
-parser.add_argument("--posenc_EquivStableLapPE_enable", action="store_true", help="")       # default=False
-parser.add_argument("--gt_dropout", type=float, default=0.2, help="")
-parser.add_argument("--gt_attn_dropout", type=float, default=0.2, help="")
-parser.add_argument("--gt_layer_norm", action="store_true")                       # default=false
-parser.add_argument("--gt_batch_norm", action="store_false")                       # default=true
-parser.add_argument("--gt_bigbird", default=None)
 
 # Loss Hyperparameter 
 parser.add_argument('--loss_fn', type=str, default='sce')
